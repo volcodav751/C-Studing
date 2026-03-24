@@ -1,9 +1,13 @@
-﻿namespace Practice1
+﻿using System.Text;
+
+namespace Practice1
 {
     public class Program
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
+            Console.InputEncoding = Encoding.UTF8;
             Console.WriteLine("Завдання 1");
 
             double a = 5;
