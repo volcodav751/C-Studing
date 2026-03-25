@@ -1,42 +1,96 @@
 ﻿UPPERCASE
-Вхідний рядок:  //FileStream � �� ��������� ����� ������ � ������. ³� ������ ���� �� ���� �����. ��� ���� �������, ��� ������� ������� ��� ����:
-Результат:  //FILESTREAM � �� ��������� ����� ������ � ������. ³� ������ ���� �� ���� �����. ��� ���� �������, ��� ������� ������� ��� ����:
+Вхідний рядок: Ryan Lott is a composer, producer, and performer. In 2007, Ryan
+Результат: RYAN LOTT IS A COMPOSER, PRODUCER, AND PERFORMER. IN 2007, RYAN
 
-Вхідний рядок:     // 1. ���� �� ����� (string path)
-Результат:     // 1. ���� �� ����� (STRING PATH)
+Вхідний рядок: founded Son Lux, and in 2014, Son Lux became a trio, both live and on
+Результат: FOUNDED SON LUX, AND IN 2014, SON LUX BECAME A TRIO, BOTH LIVE AND ON
 
-Вхідний рядок:     // 2. ����� �������� (FileMode mode) � �� �� ������ ��������� � ������ (������, ������, ���������� � �.�.)
-Результат:     // 2. ����� �������� (FILEMODE MODE) � �� �� ������ ��������� � ������ (������, ������, ���������� � �.�.)
+Вхідний рядок: record, with the additions of guitarist-composer Rafiq Bhatia and
+Результат: RECORD, WITH THE ADDITIONS OF GUITARIST-COMPOSER RAFIQ BHATIA AND
 
-Вхідний рядок:     // 3. ����� ������� (FileAccess access) � �� �������� �� ������ ���������� (�������, �����, ��� � ��, � ����).
-Результат:     // 3. ����� ������� (FILEACCESS ACCESS) � �� �������� �� ������ ���������� (�������, �����, ��� � ��, � ����).
+Вхідний рядок: drummer lan Chang. Their latest studio release is an album trilogy
+Результат: DRUMMER LAN CHANG. THEIR LATEST STUDIO RELEASE IS AN ALBUM TRILOGY
+
+Вхідний рядок: called Tomorrows, released in full in 2021. As a band, Son Lux scored
+Результат: CALLED TOMORROWS, RELEASED IN FULL IN 2021. AS A BAND, SON LUX SCORED
+
+Вхідний рядок: the 2023 Best Picture Winner Everything Everywhere All at Once
+Результат: THE 2023 BEST PICTURE WINNER EVERYTHING EVERYWHERE ALL AT ONCE
+
+Вхідний рядок: (Original Motion Picture Soundtrack), which earned them a BAFTA and
+Результат: (ORIGINAL MOTION PICTURE SOUNDTRACK), WHICH EARNED THEM A BAFTA AND
+
+Вхідний рядок: Academy Award nomination, with a second Academy Award
+Результат: ACADEMY AWARD NOMINATION, WITH A SECOND ACADEMY AWARD
+
+Вхідний рядок: nomination for their end-credit song collaboration with Mitski and
+Результат: NOMINATION FOR THEIR END-CREDIT SONG COLLABORATION WITH MITSKI AND
+
+Вхідний рядок: David Byrne.
+Результат: DAVID BYRNE.
 
 
 КІЛЬКІСТЬ СИМВОЛІВ
-Вхідний рядок:  //FileStream � �� ��������� ����� ������ � ������. ³� ������ ���� �� ���� �����. ��� ���� �������, ��� ������� ������� ��� ����:
-Результат: 129
+Вхідний рядок: Ryan Lott is a composer, producer, and performer. In 2007, Ryan
+Результат: 63
 
-Вхідний рядок:     // 1. ���� �� ����� (string path)
-Результат: 37
+Вхідний рядок: founded Son Lux, and in 2014, Son Lux became a trio, both live and on
+Результат: 69
 
-Вхідний рядок:     // 2. ����� �������� (FileMode mode) � �� �� ������ ��������� � ������ (������, ������, ���������� � �.�.)
-Результат: 110
+Вхідний рядок: record, with the additions of guitarist-composer Rafiq Bhatia and
+Результат: 65
 
-Вхідний рядок:     // 3. ����� ������� (FileAccess access) � �� �������� �� ������ ���������� (�������, �����, ��� � ��, � ����).
-Результат: 114
+Вхідний рядок: drummer lan Chang. Their latest studio release is an album trilogy
+Результат: 66
+
+Вхідний рядок: called Tomorrows, released in full in 2021. As a band, Son Lux scored
+Результат: 69
+
+Вхідний рядок: the 2023 Best Picture Winner Everything Everywhere All at Once
+Результат: 62
+
+Вхідний рядок: (Original Motion Picture Soundtrack), which earned them a BAFTA and
+Результат: 67
+
+Вхідний рядок: Academy Award nomination, with a second Academy Award
+Результат: 53
+
+Вхідний рядок: nomination for their end-credit song collaboration with Mitski and
+Результат: 66
+
+Вхідний рядок: David Byrne.
+Результат: 12
 
 
 КІЛЬКІСТЬ СЛІВ
-Вхідний рядок:  //FileStream � �� ��������� ����� ������ � ������. ³� ������ ���� �� ���� �����. ��� ���� �������, ��� ������� ������� ��� ����:
-Результат: 23
-
-Вхідний рядок:     // 1. ���� �� ����� (string path)
+Вхідний рядок: Ryan Lott is a composer, producer, and performer. In 2007, Ryan
 Результат: 11
 
-Вхідний рядок:     // 2. ����� �������� (FileMode mode) � �� �� ������ ��������� � ������ (������, ������, ���������� � �.�.)
-Результат: 22
+Вхідний рядок: founded Son Lux, and in 2014, Son Lux became a trio, both live and on
+Результат: 15
 
-Вхідний рядок:     // 3. ����� ������� (FileAccess access) � �� �������� �� ������ ���������� (�������, �����, ��� � ��, � ����).
-Результат: 23
+Вхідний рядок: record, with the additions of guitarist-composer Rafiq Bhatia and
+Результат: 9
+
+Вхідний рядок: drummer lan Chang. Their latest studio release is an album trilogy
+Результат: 11
+
+Вхідний рядок: called Tomorrows, released in full in 2021. As a band, Son Lux scored
+Результат: 13
+
+Вхідний рядок: the 2023 Best Picture Winner Everything Everywhere All at Once
+Результат: 10
+
+Вхідний рядок: (Original Motion Picture Soundtrack), which earned them a BAFTA and
+Результат: 10
+
+Вхідний рядок: Academy Award nomination, with a second Academy Award
+Результат: 8
+
+Вхідний рядок: nomination for their end-credit song collaboration with Mitski and
+Результат: 9
+
+Вхідний рядок: David Byrne.
+Результат: 2
 
 

@@ -1,4 +1,10 @@
- //FileStream — це найнижчий рівень роботи з файлом. Він бачить файл як набір байтів. Щоб його відкрити, нам потрібно вказати три речі:
-    // 1. Шлях до файлу (string path)
-    // 2. Режим відкриття (FileMode mode) — як ми хочемо працювати з файлом (читати, писати, створювати і т.д.)
-    // 3. Права доступу (FileAccess access) — які операції ми хочемо виконувати (читання, запис, або і те, і інше).
+Ryan Lott is a composer, producer, and performer. In 2007, Ryan
+founded Son Lux, and in 2014, Son Lux became a trio, both live and on
+record, with the additions of guitarist-composer Rafiq Bhatia and
+drummer lan Chang. Their latest studio release is an album trilogy
+called Tomorrows, released in full in 2021. As a band, Son Lux scored
+the 2023 Best Picture Winner Everything Everywhere All at Once
+(Original Motion Picture Soundtrack), which earned them a BAFTA and
+Academy Award nomination, with a second Academy Award
+nomination for their end-credit song collaboration with Mitski and
+David Byrne.
