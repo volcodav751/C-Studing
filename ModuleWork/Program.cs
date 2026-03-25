@@ -7,9 +7,6 @@ namespace ModuleWork
     {
         static void Main(string[] args)
         {
-            Console.OutputEncoding = Encoding.UTF8;
-            Console.InputEncoding = Encoding.UTF8;
-
             string inputFile = "C:\\Users\\maxim\\Documents\\С#Studing\\ModuleWork\\textPD21.txt";
             string resultFile = "C:\\Users\\maxim\\Documents\\С#Studing\\ModuleWork\\resultPD21.txt";
 
