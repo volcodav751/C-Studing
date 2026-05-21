@@ -1,43 +1,39 @@
-﻿using System;
-using System.Text;
-using System.Threading;
+﻿namespace PractiseWork6;
 
-namespace PractiseWork6
+public class Program
 {
-    internal class Program
+    private const int DelayMs = 1000;
+
+    static void Main()
     {
-        static void Main(string[] args)
+        Counter counter = new Counter();
+        CommandMethods commandMethods = new CommandMethods(counter);
+        ReadingCommand readingCommand = new ReadingCommand(commandMethods);
+
+        Thread readingThread = new Thread(readingCommand.ReadCommands);
+        readingThread.Start();
+
+        Console.WriteLine("Команди:");
+        Console.WriteLine("p - пауза / продовження");
+        Console.WriteLine("r - скинути лічильник");
+        Console.WriteLine("c - змінити колір");
+        Console.WriteLine("q - завершити програму");
+        Console.WriteLine();
+
+        while (counter.IsRunning)
         {
-            Console.OutputEncoding = Encoding.UTF8;
-            Console.InputEncoding = Encoding.UTF8;
-
-            Console.ForegroundColor = ConsoleColor.White;
-
-            Counter counter = new Counter();
-            ReadingKey readingKey = new ReadingKey(counter);
-
-            Thread keyThread = new Thread(readingKey.ReadKeys);
-            keyThread.Start();
-
-            Console.WriteLine("Програма запущена.");
-            Console.WriteLine("Керування:");
-            Console.WriteLine("P - пауза / продовження");
-            Console.WriteLine("R - скинути лічильник");
-            Console.WriteLine("C - змінити колір тексту");
-            Console.WriteLine("Q - завершити програму");
-            Console.WriteLine();
-
-            while (counter.IsRunning)
+            if (!counter.IsPaused)
             {
-                counter.PrintCounter();
+                counter.Increase();
 
-                Thread.Sleep(1000);
+                Console.ForegroundColor = counter.CurrentColor;
+                Console.WriteLine($"Counter: {counter.Value}");
+                Console.ResetColor();
             }
 
-            keyThread.Join();
-
-            Console.ResetColor();
-            Console.WriteLine("Програма завершена.");
+            Thread.Sleep(DelayMs);
         }
+
+        Console.WriteLine("Програму завершено.");
     }
 }

@@ -1,98 +1,102 @@
-﻿using System;
+﻿namespace PractiseWork6;
 
-namespace PractiseWork6
+public class Counter
 {
-    public class Counter
+    private readonly object locker = new object();
+
+    private int value;
+    private bool isPaused;
+    private bool isRunning = true;
+    private ConsoleColor currentColor = ConsoleColor.White;
+
+    public int Value
     {
-        private int _counter = 0;
-        private bool _isPaused = false;
-        private bool _isRunning = true;
-
-        private readonly object _locker = new object();
-
-        private ConsoleColor[] _colors =
+        get
         {
-            ConsoleColor.White,
-            ConsoleColor.Green,
-            ConsoleColor.Yellow,
-            ConsoleColor.Cyan,
-            ConsoleColor.Red
-        };
-
-        private int _colorIndex = 0;
-
-        public bool IsRunning
-        {
-            get
+            lock (locker)
             {
-                lock (_locker)
-                {
-                    return _isRunning;
-                }
+                return value;
             }
         }
+    }
 
-        public void PrintCounter()
+    public bool IsPaused
+    {
+        get
         {
-            lock (_locker)
+            lock (locker)
             {
-                if (!_isPaused && _isRunning)
-                {
-                    _counter++;
-                    Console.WriteLine($"Counter: {_counter}");
-                }
+                return isPaused;
             }
         }
+    }
 
-        public void TogglePause()
+    public bool IsRunning
+    {
+        get
         {
-            lock (_locker)
+            lock (locker)
             {
-                _isPaused = !_isPaused;
-
-                if (_isPaused)
-                {
-                    Console.WriteLine("Пауза.");
-                }
-                else
-                {
-                    Console.WriteLine("Продовження роботи.");
-                }
+                return isRunning;
             }
         }
+    }
 
-        public void ResetCounter()
+    public ConsoleColor CurrentColor
+    {
+        get
         {
-            lock (_locker)
+            lock (locker)
             {
-                _counter = 0;
-                Console.WriteLine("Лічильник скинуто до 0.");
+                return currentColor;
             }
         }
+    }
 
-        public void ChangeColor()
+    public void Increase()
+    {
+        lock (locker)
         {
-            lock (_locker)
-            {
-                _colorIndex++;
-
-                if (_colorIndex >= _colors.Length)
-                {
-                    _colorIndex = 0;
-                }
-
-                Console.ForegroundColor = _colors[_colorIndex];
-                Console.WriteLine("Колір тексту змінено.");
-            }
+            value++;
         }
+    }
 
-        public void Stop()
+    public void Reset()
+    {
+        lock (locker)
         {
-            lock (_locker)
-            {
-                _isRunning = false;
-                Console.WriteLine("Завершення програми...");
-            }
+            value = 0;
+        }
+    }
+
+    public void TogglePause()
+    {
+        lock (locker)
+        {
+            isPaused = !isPaused;
+        }
+    }
+
+    public void ChangeColor()
+    {
+        lock (locker)
+        {
+            if (currentColor == ConsoleColor.White)
+                currentColor = ConsoleColor.Green;
+            else if (currentColor == ConsoleColor.Green)
+                currentColor = ConsoleColor.Yellow;
+            else if (currentColor == ConsoleColor.Yellow)
+                currentColor = ConsoleColor.Cyan;
+            else
+                currentColor = ConsoleColor.White;
+        }
+    }
+
+    public void Stop()
+    {
+        lock (locker)
+        {
+            isRunning = false;
         }
     }
 }
