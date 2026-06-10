@@ -1,39 +1,54 @@
-﻿using System;
-using System.Collections.Generic;
 using System.Text;
 using AsyncDataLibrary.Models;
 
-namespace AsyncDataLibrary.Services
+namespace AsyncDataLibrary.Services;
+
+public class BookProcessing
 {
-    public class BookProcessing
+    public List<Book> ListBook { get; } = new();
+
+    public void CreateBook(int id, string title, string author)
     {
-        public List<Book> ListBook = new List<Book>();
-        public void CreateBook(int id, string title, string author)
+        Book book = new()
         {
-             Book book = new Book
-             {
-                 Id = id,
-                 Title = title,
-                 Author = author
-             };
-            ListBook.Add(book);
-        }
-        public string PrintAllBooks()
+            Id = id,
+            Title = title,
+            Author = author
+        };
+
+        ListBook.Add(book);
+    }
+
+    public string PrintAllBooks()
+    {
+        if (ListBook.Count == 0)
         {
-            if (ListBook.Count == 0)
-            {
-                foreach (Book book in ListBook)
-                {
-                    return $"Книга {book.Id} з назвою {book.Title} від автора {book.Author}";
-                }
-            }
-            else return "Книг не знайдено";
-            
+            return "Книг не знайдено";
         }
-        public void DeleteBook(int bookid)
+
+        StringBuilder result = new();
+        foreach (Book book in ListBook)
         {
-            Book book = ListBook.FirstOrDefault(id=>id.Id == bookid);
-            ListBook.Remove(book);
+            result.AppendLine($"Книга {book.Id}: {book.Title}, автор: {book.Author}");
         }
+
+        return result.ToString();
+    }
+
+    public Task<string> PrintAllBooksAsync()
+    {
+        return Task.FromResult(PrintAllBooks());
+    }
+
+    public bool DeleteBook(int bookId)
+    {
+        Book? book = ListBook.FirstOrDefault(item => item.Id == bookId);
+        if (book is null)
+        {
+            return false;
+        }
+
+        ListBook.Remove(book);
+        return true;
     }
 }

@@ -1,17 +1,30 @@
-namespace AsyncDataLibraryForm
+using AsyncDataLibrary.Infrastructure;
+using AsyncDataLibrary.Models;
+using AsyncDataLibrary.Repositories;
+using AsyncDataLibrary.Services;
+
+namespace AsyncDataLibraryForm;
+
+internal static class Program
 {
-    internal static class Program
+    [STAThread]
+    private static void Main()
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
-        {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
-        }
+        ApplicationConfiguration.Initialize();
+
+        string dataPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data");
+
+        var serializer = new JsonDataSerializer();
+        var storageProvider = new FileStorageProvider(dataPath);
+
+        var userRepository = new JsonRepository<User>(storageProvider, serializer);
+        var bookRepository = new JsonRepository<Book>(storageProvider, serializer);
+        var orderRepository = new JsonRepository<Order>(storageProvider, serializer);
+
+        var userService = new UserService(userRepository);
+        var bookService = new BookService(bookRepository);
+        var orderService = new OrderService(orderRepository);
+
+        Application.Run(new Form1(userService, bookService, orderService));
     }
 }

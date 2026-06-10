@@ -1,4 +1,4 @@
 <Solution>
-  <Project Path="AsyncDataLibrary/AsyncDataLibrary.csproj" Id="eb1319b7-aa3a-4a3d-883e-b941a9399c87" />
   <Project Path="AsyncDataLibraryForm/AsyncDataLibraryForm.csproj" />
+  <Project Path="AsyncDataLibrary/AsyncDataLibrary.csproj" />
 </Solution>
